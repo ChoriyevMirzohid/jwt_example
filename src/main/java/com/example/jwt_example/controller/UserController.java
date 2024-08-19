@@ -4,9 +4,12 @@ import com.example.jwt_example.model.Users;
 import com.example.jwt_example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -21,8 +24,8 @@ public class UserController {
         return userService.registerUser(user);
     }
 
-    @PostMapping("/login")
-    public String login(@RequestBody Users user) {
-        return userService.verify(user);
+    @GetMapping("/users")
+    public List<Users> getAllUsers() {
+        return userService.getAllUsers();
     }
 }

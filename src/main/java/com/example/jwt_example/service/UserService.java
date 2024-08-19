@@ -8,6 +8,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -31,5 +33,9 @@ public class UserService {
             return jwtService.generateToken(user.getUsername());
         }
         return "Invalid username or password";
+    }
+
+    public List<Users> getAllUsers() {
+        return userRepo.findAll();
     }
 }
