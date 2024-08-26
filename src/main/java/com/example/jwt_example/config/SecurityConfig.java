@@ -32,11 +32,10 @@ public class SecurityConfig {
         return http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
-                    .requestMatchers("/login", "register", "users")
+                    .requestMatchers("login", "register", "users", "bank-block")
                     .permitAll()
                     .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
-                .logout(Customizer.withDefaults())
                 .sessionManagement(session -> session.
                     sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

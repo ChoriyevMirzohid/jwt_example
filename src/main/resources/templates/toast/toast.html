@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/static/toast/main.css">
+    <link rel="stylesheet" href="../../static/static/css/app.css">
+    <title>Toast message</title>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="button">
+    <div onclick="showSuccess()" class="btn btn--success">Show Success</div>
+    <div onclick="showInfo()" class="btn btn--info">Show Info</div>
+    <div onclick="showWarning()" class="btn btn--warning">Show Warning</div>
+    <div onclick="showError()" class="btn btn--error">Show Error</div>
+</div>
+
+<script src="../../static/static/toast/main.js"></script>
+<script src="../../static/static/js/app.js"></script>
+</body>
+</html>
